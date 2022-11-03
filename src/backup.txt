@@ -1,0 +1,61 @@
+double G = 50;
+void input(star *g,int n){
+    float m, x,y,vx,vy;
+    for(int i=0;i<n;i++){
+        cout<<"##### Star #"<<i<<" in Creation ######";
+        cout<<"Enter mass: ";cin>>m;
+        cout<<"Enter position's x coordinate: ";cin>>x;
+        cout<<"Enter position's y coordinate: ";cin>>y;
+        cout<<"Enter initial velocity's x component: ";cin>>vx;
+        cout<<"Enter initial velocity's y component: ";cin>>vy;
+
+       *(g+i) = star(m,v2(x,y),v2(vx,vy));
+    }
+}
+
+void update_a(star *g,int n){
+     for(int i=0;i<n;i++){
+        v2 a1 = v2(0,0);
+        for(int j=0;j<n;j++){
+            if(j!=i){
+                a1 = a1 + ((*(g+j)).pos-(*(g+i)).pos)*((G*((*(g+j)).mass))/pow(((*(g+j)).pos-(*(g+i)).pos).mod(),3));
+            }
+        }
+        (*(g+i)).a = a1;
+
+     }
+}
+
+
+
+int main(){
+     galaxy g[2];
+     float step=0.01;
+     input(g,2);
+     
+        cout<<"  pos"<<" "<<"vel"<<" "<<"acc"<<"\n";
+        initCanvas("stars",800,800);
+        Circle s1(galaxy[0].pos.x,galaxy[0].pos.y,10);
+        Circle s2(galaxy[1].pos.x,galaxy[1].pos.y,3);
+
+
+     for(float time=0;time<100;time+=step){
+        for(int i=0;i<2;i++){
+            galaxy[i].update_pos(step);
+            galaxy[i].update_v(step);
+        }
+        s1.moveTo((galaxy[0].pos.x),(galaxy[0].pos.y));
+        s2.moveTo((galaxy[1].pos.x),(galaxy[1].pos.y));
+        s1.penDown();
+        s2.penDown();
+        wait(0.001);
+        update_a(galaxy,2);
+        
+        cout<<"1"<<" ";print(galaxy[0].pos);cout<<" ";print(galaxy[0].v);cout<<" ";print(galaxy[0].a);cout<<"\n";
+        cout<<"2"<<" ";print(galaxy[1].pos);cout<<" ";print(galaxy[1].v);cout<<" ";print(galaxy[1].a);cout<<"\n";
+        cout<<"/////////";
+        }
+ 
+    
+     
+}

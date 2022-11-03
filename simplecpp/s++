@@ -1,0 +1,2 @@
+#!/bin/sh -x
+g++ $@ -Wall /Users/srinivasganti/Desktop/CS/projects/c++/my_curiosity/cosmological-simulation/simplecpp/lib/libsprite.a -I/Users/srinivasganti/Desktop/CS/projects/c++/my_curiosity/cosmological-simulation/simplecpp/include -I/opt/X11/include -L/opt/X11/lib -lX11 -std=c++11
