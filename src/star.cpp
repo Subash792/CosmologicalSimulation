@@ -11,10 +11,10 @@ star::star(float m,v2 position, v2 velocity){
     a =v2(0,0);
 }
 
-void star::update_v(float step){
-    v = v + (a*step);
+void star::update_v(float step,v2 prev_a){
+    v = v + (a+prev_a)*(step)*0.5;
 }
 
 void star::update_pos(float step){
-    pos = pos + (v*step);
+    pos = pos + (v*step) + (a*step*step)*0.5;
 }

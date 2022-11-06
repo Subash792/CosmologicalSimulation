@@ -2,6 +2,6 @@
 
 
 int main(){
-    galaxy cluster(3);
+    galaxy cluster(2);
     simulate(0.01,cluster,10);
 }
