@@ -25,5 +25,4 @@ void simulate(float step, galaxy g, int size){
     };
 }
 
-
 #endif
