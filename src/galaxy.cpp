@@ -3,6 +3,7 @@
 galaxy::galaxy(int num){
     n = num;
     float m, x,y,vx,vy;
+    string c;
     for(int i=0;i<n;i++){
         cout<<"##### Star #"<<i<<" in Creation ######"<<"\n";
         cout<<"Enter mass: ";cin>>m;
@@ -10,6 +11,7 @@ galaxy::galaxy(int num){
         cout<<"Enter position's y coordinate: ";cin>>y;
         cout<<"Enter initial velocity's x component: ";cin>>vx;
         cout<<"Enter initial velocity's y component: ";cin>>vy;
+        cout<<"Enter star's color: ";cin>>c;
 
        g.push_back(star(m,v2(x,y),v2(vx,vy)));
 }

@@ -9,6 +9,8 @@ void simulate(float step, galaxy g, int size){
     Circle arr[g.n];
     for(int i =0;i<g.n;i++){
         arr[i] = Circle(g.g[i].pos.x, g.g[i].pos.y, size);
+        arr[i].setFill(true);
+        arr[i].setColor(COLOR("red")); 
         size -= 2;
     }
      for(float time=0;time<100;time+=step){
@@ -17,7 +19,6 @@ void simulate(float step, galaxy g, int size){
              g.g[i].update_pos(step);
              g.g[i].update_v(step);
              arr[i].moveTo( g.g[i].pos.x,g.g[i].pos.y);
-             arr[i].penDown();
         }
         wait(0.001);
         g.update_a();
