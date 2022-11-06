@@ -7,6 +7,8 @@
 void simulate(float step, galaxy g, int size){
     initCanvas("stars",800,800);
     Circle arr[g.n];
+    Text p[g.n];
+    
     for(int i =0;i<g.n;i++){
         arr[i] = Circle(g.g[i].pos.x, g.g[i].pos.y, size);
         arr[i].setFill(true);
@@ -23,6 +25,7 @@ void simulate(float step, galaxy g, int size){
              g.g[i].update_pos(step);
              g.g[i].update_v(step, prev_acc[i]);
              arr[i].moveTo( g.g[i].pos.x,g.g[i].pos.y);
+             p[i] = Text(600,(20*i)+20,"(Star#"+to_string(i)+"="+to_string(arr[i].getX())+","+to_string(arr[i].getY())+")");
         }
         wait(0.001);
         
