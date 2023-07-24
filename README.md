@@ -9,3 +9,8 @@ Given the masses, initial positions and velocities of a group of stars, the simu
 ## Dependencies
 The program is written in C++.  
 Used **[simplecpp](https://www.cse.iitb.ac.in/~ranade/simplecpp/)** package to render the animations.
+
+## Screenshots
+
+![1](./Screenshot1.png)
+![2](./Screenshot 2.png)
