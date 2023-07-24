@@ -13,4 +13,4 @@ Used **[simplecpp](https://www.cse.iitb.ac.in/~ranade/simplecpp/)** package to r
 ## Screenshots
 
 ![1](./Screenshot1.png)
-![2](./Screenshot 2.png)
+![2](./Screenshot2.png)
